@@ -1,2 +1,8 @@
+.PHONY: build test
+
 build:
-	docker build -t mumoshu/golang-k8s-aws:1.9.1 . && docker push mumoshu/golang-k8s-aws:1.9.1
+	./build mumoshu/golang-k8s-aws:1.9.1
+
+test:
+	./test/integration/github-release
+	./test/integration/github-deploy
